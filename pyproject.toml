@@ -1,0 +1,18 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/prime_number_class_objects.py" = ["E402"]
+"scripts/valid_sent.py" = ["E402"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["imdb_sentiment"]

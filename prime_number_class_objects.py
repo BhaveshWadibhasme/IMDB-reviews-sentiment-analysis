@@ -1,32 +1,12 @@
-class calculator:
+"""Compatibility entry point for ``python prime_number_class_objects.py``."""
 
-	def __init__(self,a):
-	
-		self.num1=a
-		#self.num2=b
+import runpy
+from pathlib import Path
 
-	#def addition(self):
-		
-	#	return self.num1+self.num2
-	#def sub(self):
-
-	#	return self.num1-self.num2
-
-	def prime(self):
-		for i in range(2,self.num1-1):
-			if self.num1%i==0:
-				print "not prime"
-				break
-		else:
-			print "prime"
-			
-				
-
+_TARGET = Path(__file__).resolve().parent / "scripts" / "prime_number_class_objects.py"
 
 if __name__ == "__main__":
-
-	c=calculator(9)
-	#p1=c.addition()
-	#p2=c.sub()
-	c.prime()
-	
+    runpy.run_path(str(_TARGET), run_name="__main__")
+else:
+    _namespace = runpy.run_path(str(_TARGET))
+    calculator = _namespace["calculator"]
