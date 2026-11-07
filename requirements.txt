@@ -1,0 +1,5 @@
+# Libraries used to read the CSVs, encode labels, and print accuracy.
+# Keras and TensorFlow are omitted on purpose; see the README.
+numpy==2.5.4
+pandas==3.1.1
+scikit-learn==1.9.1
